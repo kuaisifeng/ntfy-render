@@ -1,2 +1,2 @@
 FROM binwiederhier/ntfy:latest
-CMD ["serve","--listen-http",":10000"]
+# 不需要额外指令，镜像本身已配置好 CMD ["serve"]

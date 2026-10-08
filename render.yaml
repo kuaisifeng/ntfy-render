@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: my-ntfy
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: NTFY_BASE_URL
+        value: https://my-ntfy.onrender.com   # 先填一个占位，部署后再改
+      - key: NTFY_CACHE_FILE
+        value: /tmp/ntfy/cache.db              # 免费层使用临时目录
+      - key: NTFY_BEHIND_PROXY
+        value: "true"
